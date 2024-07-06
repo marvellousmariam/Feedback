@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="shortcut icon" href="../static/logo.png" type="image/x-icon">
+    <title>Feedback</title>
+</head>
+<body>
+    <div class="container">
+       <img src="../static/logo.png" alt="tesla" class="logo">
+
+{% if message %}
+  <p class="message">{{message|safe}}</p>
+{% endif %}
+        <form action="/submit" method="POST">
+
+          <div class="form-group">
+            <h3>Customer Name</h3>
+            <input type="text" name="name"  placeholder="Enter your name"/>
+          </div>
+            
+          <div class="form-group">
+            <h3>Dealer</h3>
+             
+            <select name="dealer">
+                <option value="">Select Dealer</option>
+                <option value="Mary James">Mary James</option>
+                <option value="Patricia Michael">Patricia Michael</option>
+                <option value="Jennifer Robert">Jennifer Robert</option>
+                <option value="David William">David William</option>
+                <option value="Linda Daniel">Linda Daniel</option>
+                <option value="Elizabeth John">Elizabeth John</option>
+                <option value="Mark Donald">Mark Donald</option>
+                <option value="Emily Steven">Emily Steven</option> 
+            </select>
+          </div>
+
+          <div class="form-group">
+            <h3>Rate dealer</h3>
+           <input type="radio" name="rating" value="Bad"/>Bad
+           <input type="radio" name="rating" value="Awful"/>Awful
+           <input type="radio" name="rating" value="Good"/>Good
+           <input type="radio" name="rating" value="Great"/>Great
+           <input type="radio" name="rating" value="Excellence"/>Excellence
+          </div>
+          <div class="form-group">
+            <h3>Comment</h3>
+            <textarea name="comment" id="" cols="30" rows="10" placeholder="Tell us what you liked or didn't like about our service">
+
+            </textarea>
+          </div>
+           <input type="submit" value="Submit" class="btn"/>
+        </form>
+    </div>
+</body>
+</html>
